@@ -1,0 +1,26 @@
+.output {
+    margin-bottom: 1.6rem;
+    padding: 1.7rem 1.55rem 1.5rem 1.6rem;
+    background-color: var(--dark-grey);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.output__text {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 0rem;
+    color: var(--almost-white);
+}
+
+.output__copy-icon {
+    color: var(--neon-green);
+    transition: all 0.3s ease-out;
+}
+
+.output__copy-icon:hover {
+    cursor: pointer;
+    color: var(--almost-white);
+}

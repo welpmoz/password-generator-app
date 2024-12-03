@@ -1,0 +1,36 @@
+@import "./styles/config.css";
+@import "./styles/steper.css";
+@import "./styles/checkbox.css";
+@import "./styles/buttons.css";
+@import "./styles/output.css";
+@import "./styles/password-indicator.css";
+
+.screen {
+    background-color: var(--very-dark-grey);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__title {
+    margin-bottom: 1.6rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0rem;
+    color: var(--grey);
+    text-align: center;
+}
+
+.form {
+    padding: 1.6rem;
+    background-color: var(--dark-grey);
+}
+
+.form__label {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0rem;
+    color: var(--almost-white);
+}

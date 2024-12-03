@@ -1,0 +1,23 @@
+.form__button {
+    margin-top: 3.2rem;
+    width: 100%;
+    padding: 1.6rem 0rem 1.5rem 0rem;
+    border: 0.2rem solid var(--neon-green);
+    color: var(--dark-grey);
+    background-color: var(--neon-green);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0rem;
+    transition: all 0.3s ease-out;
+}
+
+.form__button:hover {
+    cursor: pointer;
+    color: var(--neon-green);
+    background-color: inherit;
+}

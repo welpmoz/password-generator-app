@@ -1,0 +1,35 @@
+.form__group--checkbox {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-bottom: 1.6rem;
+}
+
+.form__checkbox {
+    display: none;
+}
+
+.form__label--checkbox {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    gap: 2rem;
+    cursor: pointer;
+}
+
+.form__label--checkbox::before {
+    content: '';
+    width: 1.8rem;
+    height: 1.8rem;
+    border: 0.2rem solid var(--almost-white);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: all 0.3s ease-out;
+}
+
+.form__checkbox:checked+.form__label--checkbox::before {
+    background-image: url('../assets/images/icon-check.svg');
+    background-color: var(--neon-green);
+    border-color: var(--neon-green);
+}

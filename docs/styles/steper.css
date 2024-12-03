@@ -1,0 +1,33 @@
+.form__group--range {
+    margin-bottom: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.form__range {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    height: 0.8rem;
+    width: 100%;
+    background: linear-gradient(to right, var(--neon-green) var(--value, 0%), var(--very-dark-grey) var(--value, 0%));
+}
+
+.form__range::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+    border: 0.2rem solid var(--almost-white);
+    background-color: var(--almost-white);
+    transition: all 0.3s ease-out;
+}
+
+.form__range::-webkit-slider-thumb:hover {
+    cursor: pointer;
+    background-color: var(--very-dark-grey);
+    border-color: var(--neon-green);
+}

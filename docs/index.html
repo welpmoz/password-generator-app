@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Password generator app</title>
+
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body class="screen">
+  <main class="main">
+    <h1 class="header__title">Password Generator</h1>
+
+    <div class="output">
+      <p class="output__text">P4$5W0rD!</p>
+      <svg width="21" height="24" xmlns="http://www.w3.org/2000/svg" class="output__copy-icon">
+        <path
+          d="M20.341 3.091 17.909.659A2.25 2.25 0 0 0 16.319 0H8.25A2.25 2.25 0 0 0 6 2.25V4.5H2.25A2.25 2.25 0 0 0 0 6.75v15A2.25 2.25 0 0 0 2.25 24h10.5A2.25 2.25 0 0 0 15 21.75V19.5h3.75A2.25 2.25 0 0 0 21 17.25V4.682a2.25 2.25 0 0 0-.659-1.591ZM12.469 21.75H2.53a.281.281 0 0 1-.281-.281V7.03a.281.281 0 0 1 .281-.281H6v10.5a2.25 2.25 0 0 0 2.25 2.25h4.5v1.969a.282.282 0 0 1-.281.281Zm6-4.5H8.53a.281.281 0 0 1-.281-.281V2.53a.281.281 0 0 1 .281-.281H13.5v4.125c0 .621.504 1.125 1.125 1.125h4.125v9.469a.282.282 0 0 1-.281.281Zm.281-12h-3v-3h.451c.075 0 .147.03.2.082L18.667 4.6a.283.283 0 0 1 .082.199v.451Z"
+          fill="currentColor" />
+      </svg>
+    </div>
+  
+    <form class="form">
+      <div class="form__group form__group--range">
+        <label for="password-length" class="form__label">Character Length</label>
+        <input
+          class="form__range"
+          id="password-length"
+          name="password-length"
+          max="100"
+          min="0"
+          oninput="this.style.setProperty('--value', this.value + '%')"
+          step="5"
+          type="range"
+          value="0"
+        >
+      </div>
+    
+      <div class="form__group form__group--checkbox">
+        <input
+          class="form__checkbox"
+          id="include-uppercase-letters"
+          name="uppercase-letters"
+          type="checkbox"
+        >
+        <label for="include-uppercase-letters" class="form__label form__label--checkbox">Include Uppercase Letters</label>
+      </div>
+
+      <div class="form__group form__group--checkbox">
+        <input
+          class="form__checkbox"
+          id="include-lowercase-letters"
+          name="lowercase-letters"
+          type="checkbox"
+        >
+        <label for="include-lowercase-letters" class="form__label form__label--checkbox">Include Lowercase Letters</label>
+      </div>
+      
+      <div class="form__group form__group--checkbox">
+        <input
+          class="form__checkbox"
+          id="include-numbers"  
+          name="numbers"
+          type="checkbox"
+        >
+        <label for="include-numbers" class="form__label form__label--checkbox">Include Numbers</label>
+      </div>
+      
+      <div class="form__group form__group--checkbox">
+        <input
+          class="form__checkbox"
+          id="uppercase-letters"
+          name="uppercase-letters"
+          type="checkbox"
+        >
+        <label for="uppercase-letters" class="form__label form__label--checkbox">Include Symbols</label>
+      </div>
+      
+    
+      <div class="form__password-strength">
+        <span class="password-strength__label">STRENGTH</span>
+        <div class="password-strength__details">
+          <span class="password-strength__status">WEAK</span>
+          <div class="password-strength__bars">
+            <div class="password-strength__column password-strength__column--orange"></div>
+            <div class="password-strength__column password-strength__column--orange"></div>
+            <div class="password-strength__column password-strength__column"></div>
+            <div class="password-strength__column password-strength__column"></div>
+          </div>
+        </div>
+      </div>
+    
+      <button type="submit" class="form__button">
+        GENERATE
+        <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+          <path fill="currentColor" d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z" />
+        </svg>
+      </button>
+    </form>
+  </main>
+</body>
+</html>
