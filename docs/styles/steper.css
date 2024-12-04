@@ -5,6 +5,20 @@
     gap: 1.6rem;
 }
 
+.form__range-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form__range-value {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 0rem;
+    color: var(--neon-green);
+}
+
 .form__range {
     appearance: none;
     -webkit-appearance: none;
