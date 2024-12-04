@@ -10,9 +10,12 @@
     --dark-grey: hsl(248, 10%, 15%);
     --very-dark-grey: hsl(248, 15%, 11%);
 
-    font-size: 62.5%;    
+    font-size: 62.5%;
     font-family: 'JetBrains Mono', monospace;
     font-optical-sizing: auto;
+
+    /* tablet-breakpoint */
+    --bp-tablet: 34.375rem;
 }
 
 *,

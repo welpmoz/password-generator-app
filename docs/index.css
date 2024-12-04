@@ -33,4 +33,22 @@
     font-weight: 700;
     letter-spacing: 0rem;
     color: var(--almost-white);
+    transition: all 0.3s ease-out;
+}
+
+/* tablet-breakpoint */
+@media (min-width: 34.375rem) {
+    .screen {
+        grid-template-columns: repeat(12, 6.5rem);
+        gap: 3rem;
+        justify-content: center;
+    }
+
+    .main {
+        grid-column: 4 / 10;
+    }
+
+    .form__label {
+        font-size: 1.8rem;
+    }
 }

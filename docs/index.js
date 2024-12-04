@@ -1,6 +1,16 @@
 const steper = document.getElementById('password-length');
 const passwordGeneratorForm = document.getElementById('generator-form');
 const parentStrengthDetails = document.getElementById('strength-details');
+const copyButton = document.getElementById('copy-button');
+
+copyButton.addEventListener('click', (e) => {
+    const passwordContainer = document.getElementById('output-password');
+
+    navigator.clipboard.writeText(passwordContainer.innerText);
+
+    // TODO: show copied text
+    console.log('copied');
+});
 
 const scaleRange = (value, newMin = 0, newMax = 20, oldMin = 0, oldMax = 100) => {
     let steps = (oldMax - oldMin) / (newMax - newMin);
@@ -120,4 +130,14 @@ passwordGeneratorForm.addEventListener('submit', (e) => {
     let strengthEval = zxcvbn(generatedPassword);
     let strength = getStrength(strengthEval.score);
     renderSuccess(strength, generatedPassword);
+
+    if (generatedPassword !== '') {
+        // enable copy button
+        copyButton.disabled = false;
+        copyButton.classList.add('output__copy-button--ready');
+    } else {
+        // disable copy button
+        copyButton.disabled = true;
+        copyButton.classList.remove('output__copy-button--ready');
+    }
 });

@@ -9,18 +9,42 @@
 }
 
 .output__text {
-    font-size: 2.4rem;
+    font-size: clamp(2.4rem, 7vw, 3.2rem);
     font-weight: 700;
     letter-spacing: 0rem;
     color: var(--almost-white);
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-.output__copy-icon {
+.output__text--default {
+    opacity: 0.25;
+}
+
+.output__text--generated {
+    opacity: 1;
+}
+
+.output__copy-button {
+    outline: none;
+    border: none;
+    background-color: inherit;
     color: var(--neon-green);
     transition: all 0.3s ease-out;
 }
 
-.output__copy-icon:hover {
+.output__copy-button--ready:hover {
     cursor: pointer;
     color: var(--almost-white);
 }
+
+/* .output__copy-icon {
+    color: var(--neon-green);
+    transition: all 0.3s ease-out;
+} */
+
+/* .output__copy-icon:hover {
+    cursor: pointer;
+    color: var(--almost-white);
+} */
