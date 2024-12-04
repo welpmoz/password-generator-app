@@ -55,6 +55,7 @@ Your users should be able to:
 - Save some text in the clipboard.
 - Use ChatGPT for save time markuping with meaningful class names
 - Use ChatGPT for remember some css properties
+- I use [zxcvbn](https://www.npmjs.com/package/zxcvbn) library for estimate the strength password
 
 ### Built with
 
