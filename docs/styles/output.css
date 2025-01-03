@@ -8,6 +8,24 @@
     align-items: center;
 }
 
+.output__copy-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 1.6rem;
+    align-items: center;
+}
+
+.output__copy-text {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0rem;
+    color: var(--neon-green);
+}
+
+.output__copy-text--hidden {
+    display: none;
+}
+
 .output__text {
     font-size: clamp(2.4rem, 7vw, 3.2rem);
     font-weight: 700;
@@ -34,9 +52,13 @@
     transition: all 0.3s ease-out;
 }
 
-.output__copy-button--ready:hover {
+.output__copy-button:hover {
     cursor: pointer;
     color: var(--almost-white);
+}
+
+.output__copy-button:focus {
+    outline: 0.2rem solid var(--almost-white);
 }
 
 /* .output__copy-icon {

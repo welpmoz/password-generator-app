@@ -29,6 +29,10 @@
     background: linear-gradient(to right, var(--neon-green) var(--value, 0%), var(--very-dark-grey) var(--value, 0%));
 }
 
+.form__range:focus {
+    outline: 0.2rem solid var(--almost-white);
+}
+
 .form__range::-webkit-slider-thumb {
     appearance: none;
     -webkit-appearance: none;
@@ -41,7 +45,7 @@
 }
 
 .form__range::-webkit-slider-thumb:hover {
-    cursor: pointer;
+    cursor: pointer;    
     background-color: var(--very-dark-grey);
     border-color: var(--neon-green);
 }

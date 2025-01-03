@@ -2,14 +2,14 @@ const steper = document.getElementById('password-length');
 const passwordGeneratorForm = document.getElementById('generator-form');
 const parentStrengthDetails = document.getElementById('strength-details');
 const copyButton = document.getElementById('copy-button');
+const copyFeedback = document.getElementById('copy-feedback');
 
 copyButton.addEventListener('click', (e) => {
     const passwordContainer = document.getElementById('output-password');
 
     navigator.clipboard.writeText(passwordContainer.innerText);
 
-    // TODO: show copied text
-    console.log('copied');
+    copyFeedback.classList.toggle('output__copy-text--hidden');
 });
 
 const scaleRange = (value, newMin = 0, newMax = 20, oldMin = 0, oldMax = 100) => {
@@ -35,8 +35,6 @@ const generatePassword = (options = {
     numbers: "0123456789",
     symbols: "!@#$%^&*()-_=+[]{}|;:,.<>?/",
 }) => {
-    // TODO: validate password length
-
     let poolCharacters = "";
 
     if (options.includeUppercase) poolCharacters += pools.uppercaseLetters;
@@ -120,24 +118,42 @@ const cleanFormData = {
     includeSymbols: (value) => true,
 }
 
+const formIsValid = (form) => {
+    let data = Object.fromEntries(new FormData(form));
+
+    if (Object.keys(data).length === 1) return false;
+
+    let dataTransformed = transformData(form, cleanFormData);
+
+    if (dataTransformed['passwordLength'] === 0) return false;
+
+    return true;
+};
+
+document.addEventListener('input', (e) => {
+    if (formIsValid(passwordGeneratorForm)) {
+        passwordGeneratorForm.querySelector('button[type="submit"').disabled = false;
+    } else {
+        passwordGeneratorForm.querySelector('button[type="submit"').disabled = true;
+    }
+}, true);
+
 passwordGeneratorForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
     // no validations required
+    if (formIsValid(e.currentTarget)) {
+        copyFeedback.classList.toggle('output__copy-text--hidden');
+        passwordGeneratorForm.querySelector('button[type="submit"').disabled = false;
+        // render success
+        let generatedPassword = generatePassword(transformData(e.currentTarget, cleanFormData));
+        let strengthEval = zxcvbn(generatedPassword);
+        let strength = getStrength(strengthEval.score);
+        renderSuccess(strength, generatedPassword);
 
-    // render success
-    let generatedPassword = generatePassword(transformData(e.currentTarget, cleanFormData));
-    let strengthEval = zxcvbn(generatedPassword);
-    let strength = getStrength(strengthEval.score);
-    renderSuccess(strength, generatedPassword);
-
-    if (generatedPassword !== '') {
-        // enable copy button
         copyButton.disabled = false;
         copyButton.classList.add('output__copy-button--ready');
     } else {
-        // disable copy button
-        copyButton.disabled = true;
-        copyButton.classList.remove('output__copy-button--ready');
+        passwordGeneratorForm.querySelector('button[type="submit"').disabled = true;
     }
 });

@@ -16,7 +16,11 @@
     transition: all 0.3s ease-out;
 }
 
-.form__button:hover {
+.form__button:disabled {
+    cursor: not-allowed;
+}
+
+.form__button:not(:disabled):hover {
     cursor: pointer;
     color: var(--neon-green);
     background-color: inherit;
